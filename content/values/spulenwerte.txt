@@ -1,0 +1,3 @@
+# Nl         dl ll Nk   d  lk  Nh   Rh   bh         N4     bluft
+# Wind(lang) mm cm W(k) mm cm  W(h) cm   cm(breite) W(Hys) mm(Luftspalt)
+  300        41 16 100  41 5.5 100  6.25 3.5        595    3

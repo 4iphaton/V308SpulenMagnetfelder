@@ -8,9 +8,11 @@ import scipy.constants as const
 import math
 
 xi, Bi = np.genfromtxt('content/values/Spulel_0,7i.txt',unpack=True)
-xi = xi * 100
-Bi = Bi * 1000
+xi = xi - 8
+xi = xi / 100
+Bi = Bi / 1000
 xa, Ba = np.genfromtxt('content/values/Spulel_0,7a.txt',unpack=True)
+xa = xa - 13
 xa = xa / 100
 Ba = Ba / 1000
 Nl = 300
@@ -21,13 +23,21 @@ I1 = 0.7
 R = 41 /1000
 #Theoriekurve
 
-Bin = (mur * mu0 * Nl * I1)/ll )
-Bat = 4 * np.pi * (I1/2)* (R**2/(R**2 + xa**2)**(3/2))
+Bit = (mur * mu0 * Nl * I1)/ll
+Bat = Nl * 4 * np.pi* 10**(-7) * (I1/2)* (R**2/((R**2 + (xa)**2)**(3/2)))
+def fa(x):
+    return( Nl * 4 * np.pi * 10**(-7) * (I1/2)* (R**2/((R**2 + (x)**2)**(3/2))))
+def fi(x):
+    return((mur * mu0 * Nl *(x/x)* I1)/ll)
+print(Bit)
+print(Bat)
+ln= np.linspace(-0.08, 0.05, 5000)
+ln2= np.linspace(-0.13, -0.08, 5000)
+#ln2 = np.linspace(xa[0],xa[len(xa)-1],5000)
 
-ln = np.linspace(xi[0],xi[len(t)-1],5000)
-
-plt.plot(xa, Bat, 'g-', label='Theoriekurve innen ')
-plt.plot(xi, Bit, 'g-', label='Theoriekurve außen')
+plt.plot(ln2, fa(ln2), 'g-', label='Theoriekurve außen')
+#plt.plot(ln, fa(ln), 'k-', label='Theoriekurve innen (Biot-Savart) ')
+plt.plot(ln, fi(ln), 'y-', label='Theoriekurve innen')
 #plt.plot(ln, Bin(ln, *parameters), 'g-', label='Fit')
 plt.plot(xi,Bi,'rx',label='Messwerte innen')
 plt.plot(xa,Ba,'bx',label='Messwerte außen')

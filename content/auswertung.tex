@@ -1,9 +1,106 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Messung an der Längsachse von Spulen}
+
+\subsubsection{Lange Spule}
+Die verwendete Spule besitzt $N_l = 300$ Windungen und eine Länge von $l_l = 16cm$.
+Um die magnetische Flussdichte außerhalb der Spule theoretisch zu bestimmen wird Gl.\ref{eqn:bswdg}
+und für die magnetische Flussdichte im inneren wird Gl.\ref{eqn:Bspule} verwendet.
+Daraus ergeben sich Abb.\ref{fig:plot1} und Abb.\ref{fig:plot2}.
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{plot1.pdf}
+  \caption{Messwerte und Theoriekurven der langen Spule für 0,7 Ampere.}
+  \label{fig:plot1}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Messwerte und Theoriekurven der langen Spule für 1,4 Ampere.}
+  \label{fig:plot2}
+\end{figure}
+
+\subsubsection{Kurze Spule}
+Für die zweite Messung wird eine Spule mit den Werten $N_k = 100$ und $l_k = 6cm$
+verwendet. Es werden erneut Gl.\ref{eqn:Bspule} und Gl.\ref{eqn:bswdg} verwendet, wobei
+die Gleichung für die lange Spule nur zum Vergleich verwendet wird.
+Die Ergebnisse sind in Abb.\ref{fig:plot3} und Abb.\ref{fig:plot4} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Messwerte und Theoriekurven der kurzen Spule für 0,7 Ampere.}
+  \label{fig:plot3}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Messwerte und Theoriekurven der kurzen Spule für 1,4 Ampere.}
+  \label{fig:plot4}
+\end{figure}
+
+\subsection{Messung des Helmholtzspulenpaars}
+Die Helmholtzspulen besitzen $N_H = 100$ Windungen und einen Radius bzw. auch Abstand
+der $R_H = 6.25 cm$ beträgt. Zur Berechnung der theoretischen magnetischen Flussdichte auf der Längsachse wird
+Gl.5 verwendet. Es ergeben sich Abb.\ref{fig:plot5}, Abb.\ref{fig:plot6}, Abb.\ref{fig:plot7} und Abb.\ref{fig:plot8}.
+
+\begin{figure}
+  \centering
+  \includegraphics{plot5.pdf}
+  \caption{Helmholtzspulen für 2,5 Ampere im Inneren.}
+  \label{fig:plot5}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot6.pdf}
+  \caption{Helmholtzspulen für 2,5 Ampere im Äußeren.}
+  \label{fig:plot6}
+\end{figure}\begin{figure}
+  \centering
+  \includegraphics{plot7.pdf}
+  \caption{Helmholtzspulen für 5 Ampere im Inneren.}
+  \label{fig:plot7}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot8.pdf}
+  \caption{Helmholtzspulen für 5 Ampere im Äußeren.}
+  \label{fig:plot8}
+\end{figure}
+
+\subsection{Hysterese und Hysteresekurve}
+
+Mit Hilfe der aufgenommenen Messwerte an der Toroidspule, welche $N_T = 595$
+Windungen und einen Luftspalt mit $ d_T = 3mm$ besitzt, lässt sich die
+Hysteresekurve aus Abb.\ref{fig:plot10} erstellen, welche von Neukurve zu abfallender und dann wieder zu ansteigender Kurve verläuft.
+Um das Magnetfeld H zu bestimmen
+wird Gl.\ref{eqn:Btorus} mit der für Toroidspulen gültigen Abschätzung $ H = \frac{B}{\mu_0}$
+verwendet.
+Die gesuchten Remanenzen $B_r$, Koerzitivkräfte $H_c$ und Sättigungsmagnetisierungen $B_s$
+betragen:
+\begin{equation}
+  B_{r,abfallend} = \SI{0.000165}{T}
+\end{equation}
+\begin{equation}
+  B_{r,ansteigend} = \SI{0.000657}{T}
+\end{equation}
+\begin{equation}
+  H_{c,abfallend} = \SI{-15782.87}{T}
+\end{equation}
+\begin{equation}
+  H_{c,ansteigend} = \SI{20202.07}{T}
+\end{equation}
+\begin{equation}
+  B_{s,abfallend} = \SI{-0.6935}{T}
+\end{equation}
+\begin{equation}
+  B_{s,ansteigend} = \SI{0.6917}{T}.
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{plot10.pdf}
+  \caption{Hysteresekurve.}
+  \label{fig:plot10}
 \end{figure}
